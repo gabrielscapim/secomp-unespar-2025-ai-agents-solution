@@ -27,6 +27,9 @@ export class Agent {
       model: this.model,
       instructions: this.instructions,
       input,
+      reasoning: {
+        summary: null
+      },
       tools: this.tools.map(tool => tool.toJSON())
     })
 
@@ -45,7 +48,9 @@ export class Agent {
       return response
     }
 
-    for (const message of response) {
+    const nonReasoningResponses = response.filter(item => item.type !== 'reasoning')
+
+    for (const message of nonReasoningResponses) {
       if (message.type === 'function_call') {
         const tool = this.tools.find(tool => tool.name === message.name)
         const toolResult = await tool?.run(JSON.parse(message.arguments))
