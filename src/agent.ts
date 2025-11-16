@@ -39,13 +39,13 @@ export class Agent {
       content: input
     }])
 
+    const hasFunctionCall = response.some(item => item.type === 'function_call')
+
+    if (!hasFunctionCall) {
+      return response
+    }
+
     for (const message of response) {
-      const hasFunctionCall = response.some(item => item.type === 'function_call')
-
-      if (!hasFunctionCall) {
-        return response
-      }
-
       if (message.type === 'function_call') {
         const tool = this.tools.find(tool => tool.name === message.name)
         const toolResult = await tool?.run(JSON.parse(message.arguments))
