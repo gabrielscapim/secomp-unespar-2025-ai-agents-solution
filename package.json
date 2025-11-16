@@ -1,0 +1,21 @@
+{
+  "name": "responses-api-openai",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "dotenv -e .env.development.local -e .env.development -- tsx watch src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "dotenv-cli": "^10.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "openai": "^6.8.1"
+  }
+}
