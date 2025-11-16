@@ -1,14 +1,10 @@
 {
-  "name": "responses-api-openai",
+  "name": "secomp-unespar-2025-ai-agents-solution",
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
     "dev": "dotenv -e .env.development.local -e .env.development -- tsx watch src/index.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@types/node": "^24.3.0",
     "dotenv-cli": "^10.0.0",
