@@ -27,9 +27,6 @@ export class Agent {
       model: this.model,
       instructions: this.instructions,
       input,
-      reasoning: {
-        summary: null
-      },
       tools: this.tools.map(tool => tool.toJSON())
     })
 
